@@ -1,15 +1,14 @@
 #!/bin/zsh
 
-alias ls='ls                      -v --group-directories-first --color=auto'
-alias la='ls -la --human-readable -v --group-directories-first --color=auto'
-alias ll='ls -l  --human-readable -v --group-directories-first --color=auto'
 
-# why using ls if we can use exa
-# it does everything we could ask for
 if command -v exa > /dev/null; then
     alias ls='exa'
     alias la='exa -la'
     alias ll='exa -l'
+else
+    alias ls='ls                      -v --group-directories-first --color=auto'
+    alias la='ls -la --human-readable -v --group-directories-first --color=auto'
+    alias ll='ls -l  --human-readable -v --group-directories-first --color=auto'
 fi
 
 alias v='nvim'
